@@ -14,11 +14,12 @@
 ![GitHub stars](https://img.shields.io/github/stars/dcs-liberation/dcs_liberation?style=social)
 
 ## About DCS Liberation
-DCS Liberation is a [DCS World](https://www.digitalcombatsimulator.com/en/products/world/) turn based single-player or co-op dynamic campaign. 
+
+DCS Liberation is a [DCS World](https://www.digitalcombatsimulator.com/en/products/world/) turn based single-player or co-op dynamic campaign.
 It is an external program that generates full and complex DCS missions and manage a persistent combat environment.
 
 **Note that DCS Liberation does not support the stable release of DCS. We can
-only guarantee compatibility  with either  the open beta or the stable release,
+only guarantee compatibility with either the open beta or the stable release,
 and more people play the open beta. DCS stable _might_ work sometimes, but it's
 untested, and we will be unable to fix any bugs unique to stable DCS.**
 
@@ -35,8 +36,8 @@ To download preview builds of the next version of DCS Liberation, see https://gi
 These DCS bugs prevent us from improving AI behavior. Please upvote them! (But please
 _don't_ spam them with comments):
 
-* [A2A and SEAD escorts don't escort](https://forums.eagle.ru/topic/251798-options-for-alternate-ai-escort-behavior/?tab=comments#comment-4668033)
-* [DEAD can't use mixed loadouts effectively](https://forums.eagle.ru/topic/271941-ai-rtbs-after-firing-decoys-despite-full-load-of-bombs/)
+- [A2A and SEAD escorts don't escort](https://forums.eagle.ru/topic/251798-options-for-alternate-ai-escort-behavior/?tab=comments#comment-4668033)
+- [DEAD can't use mixed loadouts effectively](https://forums.eagle.ru/topic/271941-ai-rtbs-after-firing-decoys-despite-full-load-of-bombs/)
 
 ## Bugs and feature requests
 
@@ -52,14 +53,18 @@ Tutorials, contributors and developer's guides are available in the project's [W
 
 ## Special Thanks
 
-First, a big thanks to shdwp, for starting the original DCS Liberation project. 
+First, a big thanks to shdwp, for starting the original DCS Liberation project.
 
 Then, DCS Liberation uses [pydcs](http://github.com/pydcs/dcs) for mission generation, and nothing would be possible without this.
 It also uses the popular [Mist](https://github.com/mrSkortch/MissionScriptingTools) lua framework for mission scripting.
 
 Excellent lua scripts DCS Liberation uses as plugins:
 
-* For the JTAC feature, DCS Liberation embeds Ciribob's JTAC Autolase [script](https://github.com/ciribob/DCS-JTACAutoLaze).
-* Walder's [Skynet-IADS](https://github.com/walder/Skynet-IADS) is used for Integrated Air Defense System.
+- For the JTAC feature, DCS Liberation embeds Ciribob's JTAC Autolase [script](https://github.com/ciribob/DCS-JTACAutoLaze).
+- Walder's [Skynet-IADS](https://github.com/walder/Skynet-IADS) is used for Integrated Air Defense System.
 
-Please also show some support to these projects ! 
+Please also show some support to these projects !
+
+# WARNING PLEASE READ
+
+This repository in its current state ignores all CORS related issues please do not run this in a production enviroment doing so is risky. COR related issues will be fixed later with an authentication system.
