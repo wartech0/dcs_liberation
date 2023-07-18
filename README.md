@@ -68,3 +68,9 @@ Please also show some support to these projects !
 # WARNING PLEASE READ
 
 This repository in its current state ignores all CORS related issues please do not run this in a production enviroment doing so is risky. COR related issues will be fixed later with an authentication system.
+
+##Using the webinterface
+
+Build and configure dcs-liberation just as you would on the main branch.
+Start DCS liberation have it run in the background.
+Open a terminal in web-interface/ type npm start and navigate to http://localhost:3000
