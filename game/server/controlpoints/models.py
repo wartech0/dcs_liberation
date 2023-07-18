@@ -5,11 +5,13 @@ from uuid import UUID
 
 from pydantic import BaseModel
 
+import game.theater
 from game.server.leaflet import LeafletPoint
 
 if TYPE_CHECKING:
     from game import Game
     from game.theater import ControlPoint
+    from game.theater import AircraftType
 
 
 class ControlPointJs(BaseModel):
@@ -20,6 +22,8 @@ class ControlPointJs(BaseModel):
     mobile: bool
     destination: LeafletPoint | None
     sidc: str
+    active_ammo_depot: int
+    active_fuel_depot: int
 
     class Config:
         title = "ControlPoint"
@@ -37,6 +41,8 @@ class ControlPointJs(BaseModel):
             mobile=control_point.moveable and control_point.captured,
             destination=destination,
             sidc=str(control_point.sidc()),
+            active_ammo_depot=control_point.active_ammo_depots_count,
+            active_fuel_depot=control_point.active_fuel_depots_count,
         )
 
     @staticmethod

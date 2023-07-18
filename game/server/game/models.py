@@ -29,6 +29,7 @@ class GameJs(BaseModel):
     navmeshes: NavMeshesJs
     map_center: LeafletPoint | None
     unculled_zones: list[UnculledZoneJs]
+    current_income: int
 
     class Config:
         title = "Game"
@@ -46,4 +47,5 @@ class GameJs(BaseModel):
             navmeshes=NavMeshesJs.from_game(game),
             map_center=game.theater.terrain.map_view_default.position.latlng(),
             unculled_zones=UnculledZoneJs.from_game(game),
+            current_income=game.blue.budget,
         )

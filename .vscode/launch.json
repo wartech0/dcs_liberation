@@ -11,7 +11,8 @@
       "program": "qt_ui\\main.py",
       "console": "integratedTerminal",
       "env": {
-        "PYTHONPATH": ".;./pydcs"
+        "PYTHONPATH": ".;./pydcs",
+        "CORS_ALLOW_DEBUG_SERVER": "true"
       },
       "preLaunchTask": "Prepare Environment"
     },

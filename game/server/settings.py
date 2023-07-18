@@ -17,7 +17,7 @@ class ServerSettings(BaseSettings):
 
     # WARNING: Be extremely cautious exposing the server to other machines. As there is
     # no client/server workflow yet, security has not been a focus.
-    server_bind_address: str = "::1"
+    server_bind_address: str = "192.168.0.12"
 
     # This (and the address) will be passed the the front end as a query parameter.
     server_port: int = 16880
