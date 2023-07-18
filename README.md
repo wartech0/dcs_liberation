@@ -31,6 +31,18 @@ Latest release is available here : https://github.com/dcs-liberation/dcs_liberat
 
 To download preview builds of the next version of DCS Liberation, see https://github.com/dcs-liberation/dcs_liberation/wiki/Preview-builds.
 
+# WARNING PLEASE READ
+
+This repository in its current state ignores all CORS related issues please do not run this in a production enviroment doing so is risky. COR related issues will be fixed later with an authentication system.
+
+## Using the webinterface
+
+Build and configure dcs-liberation just as you would on the main branch.
+Start DCS liberation have it run in the background.
+Open a terminal in web-interface/ type npm start and navigate to http://localhost:3000
+
+![Screenshot](https://i.imgur.com/usy0Qf7.png)
+
 ## DCS bugs
 
 These DCS bugs prevent us from improving AI behavior. Please upvote them! (But please
@@ -64,15 +76,3 @@ Excellent lua scripts DCS Liberation uses as plugins:
 - Walder's [Skynet-IADS](https://github.com/walder/Skynet-IADS) is used for Integrated Air Defense System.
 
 Please also show some support to these projects !
-
-# WARNING PLEASE READ
-
-This repository in its current state ignores all CORS related issues please do not run this in a production enviroment doing so is risky. COR related issues will be fixed later with an authentication system.
-
-## Using the webinterface
-
-Build and configure dcs-liberation just as you would on the main branch.
-Start DCS liberation have it run in the background.
-Open a terminal in web-interface/ type npm start and navigate to http://localhost:3000
-
-[![Screenshot](https://i.imgur.com/usy0Qf7.png)
