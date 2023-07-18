@@ -11,19 +11,24 @@ if TYPE_CHECKING:
     from game.ato import Package, FlightType
 
 
-class PackagesJS(BaseModel):
+class PackageJS(BaseModel):
     desc: str
-    primary_task: FlightType | None
     has_players: bool
-    departure_time: datetime
+
+    class Config:
+        title = "Package"
 
     @staticmethod
-    def all_blue_in_game(game: Game) -> list[PackagesJS]:
+    def from_package(package: Package) -> PackageJS:
+        return PackageJS(
+            desc=package.package_description,
+            has_players=package.has_players,
+        )
+
+    @staticmethod
+    def all_blue_in_game(game: Game) -> list[PackageJS]:
         packages = []
         for package in game.blue.ato.packages:
-            desc = (package.package_description,)
-            primary_task = (package.primary_task,)
-            has_players = (package.has_players,)
-            departure_time = package.mission_departure_time
+            packages.append(PackageJS.from_package(package))
 
         return packages

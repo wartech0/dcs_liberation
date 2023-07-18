@@ -13,6 +13,7 @@ from game.server.navmesh.models import NavMeshesJs
 from game.server.supplyroutes.models import SupplyRouteJs
 from game.server.tgos.models import TgoJs
 from game.server.iadsnetwork.models import IadsConnectionJs, IadsNetworkJs
+from game.server.packages.models import PackageJS
 
 if TYPE_CHECKING:
     from game import Game
@@ -30,6 +31,7 @@ class GameJs(BaseModel):
     map_center: LeafletPoint | None
     unculled_zones: list[UnculledZoneJs]
     current_income: int
+    packages: list[PackageJS]
 
     class Config:
         title = "Game"
@@ -48,4 +50,5 @@ class GameJs(BaseModel):
             map_center=game.theater.terrain.map_view_default.position.latlng(),
             unculled_zones=UnculledZoneJs.from_game(game),
             current_income=game.blue.budget,
+            packages=PackageJS.all_blue_in_game(game),
         )
