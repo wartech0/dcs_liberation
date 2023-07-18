@@ -1,7 +1,7 @@
-import LiberationMap from "./components/LiberationMap";
-import ContextPane from "./components/contextpane/ContextPane";
-import Header from "./components/header/Header";
-import Login from "./components/login/Login";
+import LiberationMap from "./components/map/LiberationMap";
+import ContextPane from "./components/ui/contextpane/ContextPane";
+import Header from "./components/ui/header/Header";
+import Login from "./components/ui/login/Login";
 import useEventStream from "./hooks/useEventSteam";
 import useInitialGameState from "./hooks/useInitialGameState";
 import "./index.css";

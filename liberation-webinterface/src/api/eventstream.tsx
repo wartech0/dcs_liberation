@@ -11,11 +11,9 @@ import {
   updateFlights,
   updateFlightPositions,
 } from "./flightsSlice";
-import {
-  deleteFrontLine,
-  updateFrontLine,
-} from "./frontLinesSlice";
+import { deleteFrontLine, updateFrontLine } from "./frontLinesSlice";
 import reloadGameState from "./gamestate";
+import { updateIadsConnection, removeIadsConnection } from "./iadsNetworkSlice";
 import {
   ControlPoint,
   Flight,
@@ -27,20 +25,20 @@ import {
   UnculledZone,
 } from "./liberationApi";
 import { navMeshUpdated } from "./navMeshSlice";
+import { newPackages, updatePackages, deletePackages } from "./packagesSlice";
 import { updateTgo } from "./tgosSlice";
 import { threatZonesUpdated } from "./threatZonesSlice";
 import { unculledZonesUpdated } from "./unculledZonesSlice";
 import { LatLng } from "leaflet";
-import { updateIadsConnection, removeIadsConnection } from "./iadsNetworkSlice";
 
 interface GameUpdateEvents {
   updated_flight_positions: { [id: string]: LatLng };
   new_combats: Combat[];
   updated_combats: Combat[];
   ended_combats: string[];
-  navmesh_updates: {blue: boolean, mesh: NavMesh}[];
+  navmesh_updates: { blue: boolean; mesh: NavMesh }[];
   updated_unculled_zones: UnculledZone[];
-  threat_zones_updated: {blue: boolean, zones: ThreatZones}[];
+  threat_zones_updated: { blue: boolean; zones: ThreatZones }[];
   new_flights: Flight[];
   updated_flights: Flight[];
   deleted_flights: string[];
@@ -124,7 +122,7 @@ export const handleStreamedEvents = (
   }
 
   if (events.updated_control_points.length > 0) {
-      dispatch(updateControlPoint(events.updated_control_points));
+    dispatch(updateControlPoint(events.updated_control_points));
   }
 
   if (events.deleted_iads.length > 0) {

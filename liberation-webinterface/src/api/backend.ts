@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const backendAddr =
-  new URL(window.location.toString()).searchParams.get("server") ??
-  "127.0.0.1:16880";
+//TODO: add a configuration file for this
+const backendAddr = "127.0.0.1:16880";
 
 // MSW can't handle IPv6 URLs...
 // https://github.com/mswjs/msw/issues/1388

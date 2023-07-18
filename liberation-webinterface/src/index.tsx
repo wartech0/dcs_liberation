@@ -1,9 +1,13 @@
 import App from "./App";
+import Packages from "./PackagesApp";
+import PackagesApp from "./PackagesApp";
 import { setupStore } from "./app/store";
 import { SocketProvider } from "./components/socketprovider/socketprovider";
 import * as serviceWorker from "./serviceWorker";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+import $ from "jquery";
+import Popper from "popper.js";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
@@ -14,11 +18,16 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
+  {
+    path: "/packages",
+    element: <PackagesApp />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <Provider store={setupStore()}>

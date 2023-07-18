@@ -416,6 +416,13 @@ export type FrontLine = {
   id: string;
   extents: LatLng[];
 };
+export type Package = {
+  id: string;
+  desc: string;
+  has_players: boolean;
+  departure_time: string;
+  target_name: string;
+}
 export type Tgo = {
   id: string;
   name: string;
@@ -487,6 +494,7 @@ export type Game = {
   map_center?: LatLng;
   current_income?: number;
   unculled_zones: UnculledZone[];
+  packages: Package[];
 };
 export type MapZones = {
   inclusion: LatLng[][][];

@@ -12,6 +12,7 @@ import threatZonesReducer from "../api/threatZonesSlice";
 import unculledZonesReducer from "../api/unculledZonesSlice";
 import webInterfaceReducer from "../api/webInterfaceSlice";
 import gameStateReducer from "../api/gameSlice";
+import packagesSlice from "../api/packagesSlice";
 import {
   Action,
   PreloadedState,
@@ -35,6 +36,7 @@ const rootReducer = combineReducers({
   unculledZones: unculledZonesReducer,
   webInterface: webInterfaceReducer,
   gameState: gameStateReducer,
+  packagesState: packagesSlice,
 });
 
 export function setupStore(preloadedState?: PreloadedState<RootState>) {
